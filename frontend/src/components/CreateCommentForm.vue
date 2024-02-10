@@ -3,7 +3,7 @@ import Spinner from '@/components/Spinner.vue'
 </script>
 
 <template>
-    <Spinner :show='this.loading' />
+    <Spinner :show='loading' />
     <Popup ref='popup' />
     <form @submit.prevent='submitForm'>
         <div class='row'>

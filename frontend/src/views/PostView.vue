@@ -9,8 +9,8 @@ import Comments from '@/components/Comments.vue'
 <template>
     <Popup ref='popup' />
     <div class='container'>
-        <h1 class='title'>{{ this.post.title }}</h1>
-        <p class='descr' v-html="this.post.description"></p>
+        <h1 class='title'>{{ post.title }}</h1>
+        <p class='descr' v-html="post.description"></p>
         <br>
         <div class='stats'>
             <div>
@@ -18,24 +18,24 @@ import Comments from '@/components/Comments.vue'
                 <p>{{ post.views }}</p>
             </div>
             <div class='like-wrapper' @click='like'>
-                <p v-if='this.alreadyLiked' class='liked'>Вам нравится эта новость!</p>
+                <p v-if='alreadyLiked' class='liked'>Вам нравится эта новость!</p>
                 <p>{{ post.likes }}</p>
                 <img src='@/assets/icons/like.svg' alt='like'>
             </div>
         </div>
-        <img class='thumbnail' :src='this.getThumbnailPath(this.post.thumbnail)' alt='thumbnail'>
-        <p class='content' v-html="this.post.content"></p>
+        <img class='thumbnail' :src='getThumbnailPath(post.thumbnail)' alt='thumbnail'>
+        <p class='content' v-html="post.content"></p>
         <div class='delete' @click='deleteNews'>
             <img src='@/assets/icons/delete.svg' alt='delete'>
             <p>Удалить эту новость</p>
         </div>
         <div class='details'>
-            <p class='date'>{{ dateToStr(this.post.created_at) }}</p>
-            <p class='author'>Автор: {{ this.post.author }}</p>
+            <p class='date'>{{ dateToStr(post.created_at) }}</p>
+            <p class='author'>Автор: {{ post.author }}</p>
         </div>
         <hr>
-        <CreateCommentForm :postId='this.post.id' />
-        <Comments :comments='this.post.comments' />
+        <CreateCommentForm :postId='post.id' />
+        <Comments :comments='post.comments' />
     </div>
 </template>
 

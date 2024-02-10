@@ -5,7 +5,7 @@ import { dateToStr } from '@/utils/helper'
 <template>
     <div class='grid-wrapper'>
         <router-link :to="'/post/' + item.id" class='item' v-for='item in news' :key='item.id'>
-            <img :src='this.getThumbnailPath(item.thumbnail)' alt='thumbnail' class='thumbnail'>
+            <img :src='getThumbnailPath(item.thumbnail)' alt='thumbnail' class='thumbnail'>
             <div class='content'>
                 <div class='inner-content'>
                     <h4>{{ item.title }}</h4>
